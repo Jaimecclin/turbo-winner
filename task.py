@@ -14,6 +14,7 @@ class Task:
   
   @property
   def isRunning(self):
+    ''' Return whether task is running or not. '''
     return self.p.is_alive()
   
   def execute(self):

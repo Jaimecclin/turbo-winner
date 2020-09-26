@@ -6,10 +6,7 @@ import threading
 app = Flask(__name__)
 tm = TaskManager()
 
-@app.route("/")
-def hello():
-  return "Hello World!"
-
+''' flask interface '''
 @app.route("/AddTask")
 def addTask():
   # Create a task
