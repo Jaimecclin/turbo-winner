@@ -1,4 +1,5 @@
 import threading
+import time
 import numpy as np
 from multiprocessing import Process
 from tpot import TPOTRegressor
@@ -30,6 +31,11 @@ class Task:
     self.p = Process(target=self.__trainTask)
     # Start it.
     self.p.start()
+    while self.p.is_alive():
+      '''
+      Do something, like monitor the process output. 
+      '''
+      time.sleep(0.1)
 
   def __trainTask(self):
     ''' You can define your task here. '''
